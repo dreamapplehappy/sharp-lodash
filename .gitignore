@@ -1,8 +1,8 @@
-.idea/
 .DS_Store
 node_modules/
 *.sock
 *.sw*
+.idea/
 *.patch
 *.diff
 npm-debug.log*
