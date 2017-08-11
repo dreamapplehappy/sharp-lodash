@@ -1,0 +1,16 @@
+.idea/
+.DS_Store
+node_modules
+*.sock
+*.sw*
+*.patch
+*.diff
+npm-debug.log*
+.envrc
+.karma/
+*.orig
+.nyc_output/
+coverage/
+BUILDTMP/
+yarn.lock
+package-lock.json
