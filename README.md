@@ -1,1 +1,1 @@
-test
+[![Build Status](https://travis-ci.org/dreamapplehappy/sharp-lodash.svg?branch=master)](https://travis-ci.org/dreamapplehappy/sharp-lodash)
