@@ -158,7 +158,7 @@
          + [ ] capitalize.js
          + [ ] castArray.js
          + [ ] ceil.js
-         + [x] chunk.js ✅ [源码阅读](https://dreamapple.me/2017/08/17/lodash%E6%BA%90%E7%A0%81%E8%AE%B2%E8%A7%A3-2/) 
+         + [x] chunk.js ✅ [源码讲解](https://dreamapple.me/2017/08/17/lodash%E6%BA%90%E7%A0%81%E8%AE%B2%E8%A7%A3-2/) 
          + [ ] clamp.js
          + [ ] clone.js
          + [ ] cloneDeep.js
