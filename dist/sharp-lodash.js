@@ -70,85 +70,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _chunk = __webpack_require__(1);
-
-var _chunk2 = _interopRequireDefault(_chunk);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function createSharpLodash() {
-    return {
-        chunk: _chunk2.default
-    };
-}
-
-module.exports = createSharpLodash();
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _slice = __webpack_require__(2);
-
-var _slice2 = _interopRequireDefault(_slice);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Creates an array of elements split into groups the length of `size`.
- * If `array` can't be split evenly, the final chunk will be the remaining
- * elements.
- *
- * @since 3.0.0
- * @category Array
- * @param {Array} array The array to process.
- * @param {number} [size=1] The length of each chunk
- * @returns {Array} Returns the new array of chunks.
- * @example
- *
- * chunk(['a', 'b', 'c', 'd'], 2)
- * // => [['a', 'b'], ['c', 'd']]
- *
- * chunk(['a', 'b', 'c', 'd'], 3)
- * // => [['a', 'b', 'c'], ['d']]
- */
-function chunk(array, size) {
-    size = Math.max(size, 0);
-    var length = array == null ? 0 : array.length;
-    if (!length || size < 1) {
-        return [];
-    }
-    var index = 0;
-    var resIndex = 0;
-    var result = new Array(Math.ceil(length / size));
-
-    while (index < length) {
-        result[resIndex++] = (0, _slice2.default)(array, index, index += size);
-    }
-    return result;
-}
-
-exports.default = chunk;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -198,6 +124,153 @@ function slice(array, start, end) {
 }
 
 exports.default = slice;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _slice = __webpack_require__(0);
+
+var _slice2 = _interopRequireDefault(_slice);
+
+var _chunk = __webpack_require__(2);
+
+var _chunk2 = _interopRequireDefault(_chunk);
+
+var _compact = __webpack_require__(3);
+
+var _compact2 = _interopRequireDefault(_compact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createSharpLodash() {
+    return {
+        slice: _slice2.default,
+        chunk: _chunk2.default,
+        compact: _compact2.default
+    };
+}
+
+module.exports = createSharpLodash();
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slice = __webpack_require__(0);
+
+var _slice2 = _interopRequireDefault(_slice);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Creates an array of elements split into groups the length of `size`.
+ * If `array` can't be split evenly, the final chunk will be the remaining
+ * elements.
+ *
+ * @since 3.0.0
+ * @category Array
+ * @param {Array} array The array to process.
+ * @param {number} [size=1] The length of each chunk
+ * @returns {Array} Returns the new array of chunks.
+ * @example
+ *
+ * chunk(['a', 'b', 'c', 'd'], 2)
+ * // => [['a', 'b'], ['c', 'd']]
+ *
+ * chunk(['a', 'b', 'c', 'd'], 3)
+ * // => [['a', 'b', 'c'], ['d']]
+ */
+function chunk(array, size) {
+    size = Math.max(size, 0);
+    var length = array == null ? 0 : array.length;
+    if (!length || size < 1) {
+        return [];
+    }
+    var index = 0;
+    var resIndex = 0;
+    var result = new Array(Math.ceil(length / size));
+
+    while (index < length) {
+        result[resIndex++] = (0, _slice2.default)(array, index, index += size);
+    }
+    return result;
+}
+
+exports.default = chunk;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/**
+ * Creates an array with all falsey values removed. The values `false`, `null`,
+ * `0`, `""`, `undefined`, and `NaN` are falsey.
+ *
+ * @since 0.1.0
+ * @category Array
+ * @param {Array} array The array to compact.
+ * @returns {Array} Returns the new array of filtered values.
+ * @example
+ *
+ * compact([0, 1, false, 2, '', 3])
+ * // => [1, 2, 3]
+ */
+function compact(array) {
+    var resIndex = 0;
+    var result = [];
+
+    if (array == null) {
+        return result;
+    }
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = array[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var value = _step.value;
+
+            if (value) {
+                result[resIndex++] = value;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return result;
+}
+
+exports.default = compact;
 
 /***/ })
 /******/ ]);
