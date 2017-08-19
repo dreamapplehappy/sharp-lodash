@@ -164,7 +164,7 @@
          + [ ] cloneDeep.js
          + [ ] cloneDeepWith.js
          + [ ] cloneWith.js
-         + [ ] compact.js
+         + [x] compact.js ✅ [源码讲解]()
          + [ ] cond.js
          + [ ] conforms.js
          + [ ] conformsTo.js
